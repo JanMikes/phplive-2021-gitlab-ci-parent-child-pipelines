@@ -15,13 +15,16 @@ package-a:
   stage: triggers
   trigger:
     include: "packages/A/.gitlab-ci.yml"
+    strategy: depend
 
 package-b:
   stage: triggers
   trigger:
     include: "packages/B/.gitlab-ci.yml"
+    strategy: depend
 
 package-c:
   stage: triggers
   trigger:
     include: "packages/C/.gitlab-ci.yml"
+    strategy: depend
