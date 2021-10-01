@@ -11,7 +11,6 @@ tests:
   stage: test
   script:
     - echo "Test package 'vendor/bin/phpunit tests"
-    - exit 1
 
 deploy:
   stage: deploy
