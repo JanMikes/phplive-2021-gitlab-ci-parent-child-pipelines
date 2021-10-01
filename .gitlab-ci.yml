@@ -1,7 +1,6 @@
 stages:
   - build
-  - test
-  - deploy
+  - triggers
 
 ##################
 
@@ -12,34 +11,17 @@ composer:
 
 ##
 
-package-a-tests:
-  stage: test
-  script:
-    - echo "Test package A - running 'vendor/bin/phpunit tests packages/A/tests'"
+package-a:
+  stage: triggers
+  trigger:
+    include: "packages/A/.gitlab-ci.yml"
 
-package-b-tests:
-  stage: test
-  script:
-    - echo "Test package B - running 'vendor/bin/phpunit tests packages/B/tests'"
+package-b:
+  stage: triggers
+  trigger:
+    include: "packages/B/.gitlab-ci.yml"
 
-package-c-tests:
-  stage: test
-  script:
-    - echo "Test package C - running 'vendor/bin/phpunit tests packages/C/tests'"
-
-##
-
-package-a-deploy:
-  stage: deploy
-  script:
-    - echo "Deploy package A .. publish it somewhere .."
-
-package-b-deploy:
-  stage: deploy
-  script:
-    - echo "Deploy package B .. publish it somewhere .."
-
-package-c-deploy:
-  stage: deploy
-  script:
-    - echo "Deploy package C .. publish it somewhere .."
+package-c:
+  stage: triggers
+  trigger:
+    include: "packages/C/.gitlab-ci.yml"

@@ -1,0 +1,15 @@
+stages:
+  - test
+  - deploy
+
+##################
+
+tests:
+  stage: test
+  script:
+    - echo "Test package 'vendor/bin/phpunit tests"
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploy publish it somewhere .."
