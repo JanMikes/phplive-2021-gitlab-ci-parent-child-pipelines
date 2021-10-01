@@ -1,37 +1,45 @@
 stages:
   - build
-  - triggers
-
-## Abstract job for all projects triggers
-.trigger-job:
-    stage: triggers
-    trigger:
-        strategy: depend
+  - test
+  - deploy
 
 ##################
 
-generate-packages-pipeline:
-  image: composer:2
+composer:
   stage: build
   script:
-    - composer install
-    - php .gitlab/generate-dynamic-pipeline.php
-    - cat .gitlab/.gitlab-dynamic-children.yml
-  rules:
-    - if: $CI_MERGE_REQUEST_ID || $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      changes:
-        - packages/**/*
-  artifacts:
-    paths:
-      - .gitlab/.gitlab-dynamic-children.yml
+    - echo "Run composer install for example .."
 
-packages:
-  extends: .trigger-job
-  rules:
-    - if: $CI_MERGE_REQUEST_ID || $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      changes:
-        - packages/**/*
-  trigger:
-    include:
-      - artifact: .gitlab/.gitlab-dynamic-children.yml
-        job: generate-packages-pipeline
+##
+
+package-a-tests:
+  stage: test
+  script:
+    - echo "Test package A - running 'vendor/bin/phpunit tests packages/A/tests'"
+
+package-b-tests:
+  stage: test
+  script:
+    - echo "Test package B - running 'vendor/bin/phpunit tests packages/B/tests'"
+
+package-c-tests:
+  stage: test
+  script:
+    - echo "Test package C - running 'vendor/bin/phpunit tests packages/C/tests'"
+
+##
+
+package-a-deploy:
+  stage: deploy
+  script:
+    - echo "Deploy package A .. publish it somewhere .."
+
+package-b-deploy:
+  stage: deploy
+  script:
+    - echo "Deploy package B .. publish it somewhere .."
+
+package-c-deploy:
+  stage: deploy
+  script:
+    - echo "Deploy package C .. publish it somewhere .."
