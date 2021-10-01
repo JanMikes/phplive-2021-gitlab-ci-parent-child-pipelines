@@ -4,22 +4,39 @@ stages:
 
 ##################
 
-generate-packages-ci-file:
-  image: php:8
+composer:
   stage: build
   script:
-    - echo "Running composer install etc ..."
-    - php .gitlab/generate-packages-pipelines.php
-    - cat .gitlab/generated-gitlab-ci.yml
-  artifacts:
-    paths:
-      - .gitlab/generated-gitlab-ci.yml
+    - echo "Run composer install for example .."
 
 ##
 
-trigger-packages:
+package-a:
   stage: triggers
   trigger:
-    include:
-      - artifact: .gitlab/generated-gitlab-ci.yml
-        job: generate-packages-ci-file
+    include: "packages/A/.gitlab-ci.yml"
+    strategy: depend
+  rules:
+    - if: $CI_MERGE_REQUEST_ID || $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - packages/A/**/*
+
+package-b:
+  stage: triggers
+  trigger:
+    include: "packages/B/.gitlab-ci.yml"
+    strategy: depend
+  rules:
+    - if: $CI_MERGE_REQUEST_ID || $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - packages/B/**/*
+
+package-c:
+  stage: triggers
+  trigger:
+    include: "packages/C/.gitlab-ci.yml"
+    strategy: depend
+  rules:
+    - if: $CI_MERGE_REQUEST_ID || $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - packages/C/**/*
