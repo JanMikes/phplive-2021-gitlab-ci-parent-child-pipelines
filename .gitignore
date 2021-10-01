@@ -1,3 +1,4 @@
 vendor/
 docker-compose.override.yml
 .gitlab/.gitlab-dynamic-children.yml
+.gitlab/generated-gitlab-ci.yml
