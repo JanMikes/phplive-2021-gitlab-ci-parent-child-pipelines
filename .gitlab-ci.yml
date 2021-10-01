@@ -5,15 +5,17 @@ stages:
 ##################
 
 generate-packages-ci-file:
-  image: php:8
+  image: composer:2
   stage: build
   script:
-    - echo "Running composer install etc ..."
-    - php .gitlab/generate-packages-pipelines.php
+    - composer install
+    - php .gitlab/generate-packages-pipelines-dependencies.php
     - cat .gitlab/generated-gitlab-ci.yml
   artifacts:
     paths:
       - .gitlab/generated-gitlab-ci.yml
+  rules:
+    - if: $CI_MERGE_REQUEST_ID || $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 ##
 
