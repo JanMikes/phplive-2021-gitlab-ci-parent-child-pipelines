@@ -1,0 +1,8 @@
+{{JOB_NAME}}:
+    trigger:
+        include: {{GITLAB_CI_FILE}}
+    rules:
+        - if: $CI_MERGE_REQUEST_ID || $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+          changes:
+#              - phpstan.neon
+{{DEPENDENT_FILES}}

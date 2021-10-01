@@ -1,0 +1,25 @@
+{
+    "name": "janmikes/phplive-2021-parent-child-pipelines",
+    "type": "project",
+    "require": {
+        "php": "^8.0.0",
+        "nette/utils": "^3.2",
+        "nette/finder": "^2.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jan Mikes",
+            "email": "j.mikes@me.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PHPLive\\Packages\\A\\": "packages/A",
+            "PHPLive\\Packages\\B\\": "packages/B",
+            "PHPLive\\Packages\\C\\": "packages/C"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+    php:
+        image: phplive-gitlab-ci
+        build:
+            context: .
+        volumes:
+            - .:/var/www
+        working_dir: /var/www
