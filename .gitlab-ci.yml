@@ -4,27 +4,22 @@ stages:
 
 ##################
 
-composer:
+generate-packages-ci-file:
+  image: php:8
   stage: build
   script:
-    - echo "Run composer install for example .."
+    - echo "Running composer install etc ..."
+    - php .gitlab/generate-packages-pipelines.php
+    - cat .gitlab/generated-gitlab-ci.yml
+  artifacts:
+    paths:
+      - .gitlab/generated-gitlab-ci.yml
 
 ##
 
-package-a:
+trigger-packages:
   stage: triggers
   trigger:
-    include: "packages/A/.gitlab-ci.yml"
-    strategy: depend
-
-package-b:
-  stage: triggers
-  trigger:
-    include: "packages/B/.gitlab-ci.yml"
-    strategy: depend
-
-package-c:
-  stage: triggers
-  trigger:
-    include: "packages/C/.gitlab-ci.yml"
-    strategy: depend
+    include:
+      - artifact: .gitlab/generated-gitlab-ci.yml
+        job: generate-packages-ci-file
