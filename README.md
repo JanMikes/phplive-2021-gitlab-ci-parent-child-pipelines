@@ -53,4 +53,9 @@ Introduction to merge request pipelines (without dynamic child pipelines yet) - 
 
 ## Demo 7
 
+Merge request pipelines with dynamic child pipelines combined together.
+
+- [Code diff](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/merge_requests/8/diffs)
+- [Pipeline](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/pipelines/380763958)
+
 ## Demo 8
