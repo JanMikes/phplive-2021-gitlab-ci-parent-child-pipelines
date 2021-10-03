@@ -2,7 +2,7 @@
 
 Repository used for live demo on [PHPLive 2021 conference](https://phplive.cz).
 
-Goal is to demonstrate through the demos, how to get from "classic approach" to parent-child pipelines, with dynamic child pipelines that will trigger based on changed code only for those packages that are affected (and their dependencies). 
+Goal is to demonstrate through the demos, how to get from "classic approach" to parent-child pipelines, with dynamic child pipelines that will trigger based on changed code only for those packages that are affected (and their dependencies).
 
 ## Demo 1
 
@@ -12,6 +12,11 @@ Goal is to demonstrate through the demos, how to get from "classic approach" to 
 - [Pipeline](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/pipelines/380721770)
 
 ## Demo 2
+
+Simple implementation of parent-child pipelines.
+
+- [Code diff](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/merge_requests/2/diffs)
+- [Pipeline](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/pipelines/380919146)
 
 ## Demo 3
 
