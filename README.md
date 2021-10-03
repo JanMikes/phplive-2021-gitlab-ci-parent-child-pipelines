@@ -32,6 +32,11 @@ Example of failed pipeline to demonstrate the UI and behaviour.
 
 ## Demo 4
 
+Introduction of `depend` strategy to make parent pipeline fail if one of children fail. 
+
+- [Code diff](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/merge_requests/4/diffs)
+- [Pipeline](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/pipelines/380726572)
+
 ## Demo 5
 
 ## Demo 6
