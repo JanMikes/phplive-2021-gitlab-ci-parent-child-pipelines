@@ -2,6 +2,12 @@
 
 Repository used for live demo on [PHPLive 2021 conference](https://phplive.cz).
 
+## Need help with CI/CD?
+
+I love to solve complex CI/CD problems and challenges. 
+
+I offer consultations on various topics. If you would like to get a helping hand, [let's have chat](https://janmikes.cz/contact), maybe I can help you.
+
 ## Demos 
 
 Goal is to demonstrate through the demos, how to get from "classic approach" to parent-child pipelines, with dynamic child pipelines.
