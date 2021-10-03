@@ -4,6 +4,11 @@ Repository used for live demo on [PHPLive 2021 conference](https://phplive.cz).
 
 Goal is to demonstrate through the demos, how to get from "classic approach" to parent-child pipelines, with dynamic child pipelines that will trigger based on changed code only for those packages that are affected (and their dependencies).
 
+## Useful resources
+
+- [Gitlab docs - Parent-child pipelines](https://docs.gitlab.com/ee/ci/pipelines/parent_child_pipelines.html)
+- [Gitlab docs - Merge request pipelines](https://docs.gitlab.com/ee/ci/pipelines/merge_request_pipelines.html)
+
 ## Demo 1
 
 "Classic approach" - monorepo without parent-child pipelines, everything run in the same pipeline. 
