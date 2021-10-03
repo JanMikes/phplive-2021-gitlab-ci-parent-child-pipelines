@@ -39,6 +39,11 @@ Introduction of `depend` strategy to make parent pipeline fail if one of childre
 
 ## Demo 5
 
+Introduction to dynamic child pipelines with exactly the same behaviour - dynamically generating pipelines for all packages. This is 2 level parent-child pipelines.
+
+- [Code diff](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/merge_requests/5/diffs)
+- [Pipeline](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/pipelines/380736054)
+
 ## Demo 6
 
 ## Demo 7
