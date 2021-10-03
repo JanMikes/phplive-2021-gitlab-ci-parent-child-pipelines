@@ -2,7 +2,7 @@
 
 Repository used for live demo on [PHPLive 2021 conference](https://phplive.cz).
 
-Goal is to demonstrate through the demos, how to get from "classic approach" to parent-child pipelines, with dynamic child pipelines that will trigger based on changed code only for those packages that are affected (and their dependencies).
+Goal is to demonstrate through the demos, how to get from "classic approach" to parent-child pipelines, with dynamic child pipelines that based on changed code, will trigger pipelines only for those packages that are affected (and their dependencies).
 
 ## Useful resources
 
@@ -59,3 +59,9 @@ Merge request pipelines with dynamic child pipelines combined together.
 - [Pipeline](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/pipelines/380763958)
 
 ## Demo 8
+
+The "Ultimate demo" - merge request pipeline with dynamic child, run pipelines for package that has been directly changed + all dependent packages, to make sure nothing have been broken up.
+
+- [Code diff](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/merge_requests/10/diffs)
+- [Pipeline - package A changed (has no dependencies on it)](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/pipelines/380843155)
+- [Pipeline - Package C changed (pkg A depends on C)](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/pipelines/380844092)
