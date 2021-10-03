@@ -25,6 +25,11 @@ Simple implementation of parent-child pipelines.
 
 ## Demo 3
 
+Example of failed pipeline to demonstrate the UI and behaviour.
+
+- [Code diff](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/merge_requests/3/diffs)
+- [Pipeline](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/pipelines/380725401)
+
 ## Demo 4
 
 ## Demo 5
