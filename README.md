@@ -46,6 +46,11 @@ Introduction to dynamic child pipelines with exactly the same behaviour - dynami
 
 ## Demo 6
 
+Introduction to merge request pipelines (without dynamic child pipelines yet) - trigger pipeline only package that has been directly changed.
+
+- [Code diff](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/merge_requests/6/diffs)
+- [Pipeline](https://gitlab.com/janmikes/phplive-2021-parent-child-pipelines/-/pipelines/380746777)
+
 ## Demo 7
 
 ## Demo 8
