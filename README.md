@@ -2,6 +2,8 @@
 
 Repository used for live demo on [PHPLive 2021 conference](https://phplive.cz).
 
+[Slides](https://speakerdeck.com/janmikes/phplive-2021-gitlab-ci-dynamic-child-and-parent-child-pipelines)
+
 ## Need help with CI/CD?
 
 I love to solve complex CI/CD problems and challenges. 
